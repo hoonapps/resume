@@ -1,23 +1,60 @@
 # Jobs
 # VP of Global Communications
 - company: (주)고스트패스
-  position: VP of Global Communications
-  duration: Oct, 2013 &mdash; Present
-  summary: Write about your core competencies in one or two sentences describing your position. If you held the position for a long time, it could be a longer section, including a couple bullet points	<ul class="resume-item-list"><li>A project you are proud of</li><li>Another awesome project</li><li>or a team or department you worked with</li></ul>
-
-# Director of Digital Stratgy
-- company: (주)소셜인베스팅랩
-  position: Director of Digital Strategy
-  duration: Jun, 2010 &mdash; Sept, 2013
-  summary: If your stint was shorter, feel free to be brief and just call out the most meaningful points of your role. Be concise, and be meaninful. The person reading just needs enough to want to talk to you more about your experience.
+  position: Backend Engineer
+  duration: 2022.12 &mdash; Present
+  summary: |
+    탈중앙화 생체인증 및 보안 솔루션을 제공하는 서비스의 백엔드 엔지니어로 근무하며 <br/> 2024 CES 혁신상, 2025 CES 최고 혁신상 수상에 기여하였습니다. <br/>
+    <ul class="resume-item-list">
+      <li>고패스 서비스 유저앱, 키오스크앱 백엔드(AWS 서버구축, 아키텍처 설계, DB 설계, API) 개발</li>
+      <li>고패스 서비스 react로 어드민 페이지, 근태관리 페이지 개발</li>
+      <li>NICE 정보통신 결제 연동 백엔드 개발</li>
+      <li>.net에서 Nest.js로 서버 개편</li>
+      <li>github action, ecr, codedeploy로 배포 자동화 구축</li>
+      <li>esp32 보드 SW 통신 및 신호제어 기능 개발</li>
+      <li>포유발렛 서비스에서 발렛 및 주차 기능 백엔드 개발</li>
+      <li>광주버스 gps 위치 기반 추출 하여 도착시간 계산 알고리즘 개발</li>
+    </ul>
 
 # Communications Coordinator
 - company: (주)미스터팍
-  position: Communications Coordinator
-  duration: Jun, 2008  &mdash; May, 2010
-  summary: Led communication efforts across digital and traditional media channels for marketing and public relations, internal communication strategies, and coordinated support programs for the recipients of the center's services.
+  position: Backend Engineer
+  duration: 2022.03  &mdash; 2022.12
+  summary: |
+    주차창 보험 시스템 및 발렛기능의 제공하는 서비스의 백엔드 엔지니어로 외주 개발하였습니다. <br/>
+    <ul class="resume-item-list">
+      <li>미팍 서비스 유저앱, 파트너스앱 백엔드(AWS 서버구축, 아키텍처 설계, DB 설계, API) 개발</li>
+      <li>미팍 서비스 react로 통계 페이지 개발</li>
+      <li>DB손해보험 연동 백엔드 개발</li>
+      <li>파트너스 주차장 보험료 결제 및 사용자 주자장 결제 시스템 개발</li>
+      <li>기존 통계 페이지 API 호출 시간 10초->1초로 개선</li>
+    </ul>
+
+# Director of Digital Stratgy
+- company: (주)소셜인베스팅랩
+  position: Full Stack Engineer
+  duration: 2021.07 &mdash; 2022.12
+  summary: |
+    SNS기반 주식매매 플랫폼인 커피하우스 앱 서비스의 풀스택 엔지니어로 근무하며 <br/> 누적 다운로드 수 약 45만명, 앱을 통해서 계좌 개설한 유저 4만 여명 달성했습니다. <br/>
+
+    <ul class="resume-item-list">
+      <li>커피하우스 앱 서비스 API 개발</li>
+      <li>런칭까지 안드로이드 앱 개발</li>
+      <li>SNS 기능, 실시간 주식 차트 및 거래 기능 개발</li>
+      <li>신한투자증권, NH투자증권, KB증권, 삼성증권 계좌개설 및 거래연동 백엔드 개발</li>
+      <li>계좌개설 이벤트 기능 개발 및 운영</li>
+      <li>에러발생 및 배포시 Slack에 알림 보내는 기능 구현</li>
+    </ul>
 
 - company: (주)디케이랩
-  position: Communications Coordinator
-  duration: Jun, 2008  &mdash; May, 2010
-  summary: Led communication efforts across digital and traditional media channels for marketing and public relations, internal communication strategies, and coordinated support programs for the recipients of the center's services.
+  position: Backend Engineer
+  duration: 2020.08  &mdash; 2021.06
+  summary: |
+    주차창 보험 시스템 및 발렛기능의 제공하는 서비스의 백엔드 엔지니어로 외주 개발하였습니다. <br/>
+    <ul class="resume-item-list">
+      <li>미팍 서비스 유저앱, 파트너스앱 백엔드(AWS 서버구축, 아키텍처 설계, DB 설계, API) 개발</li>
+      <li>미팍 서비스 react로 통계 페이지 개발</li>
+      <li>DB손해보험 연동 백엔드 개발</li>
+      <li>파트너스 주차장 보험료 결제 및 사용자 주자장 결제 시스템 개발</li>
+      <li>기존 통계 페이지 API 호출 시간 10초->1초로 개선</li>
+    </ul>

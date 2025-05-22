@@ -1,12 +1,29 @@
 # Skills
-# Organizational leadership
-- skill: Organizational leadership
-  description: I have several years of experience leading organziations from community groups to business departments. From public speaking, to mentoring, to coordination of people and events, I can lead in any context.
+- skill: Languages
+  description: |
+    <ul class="resume-item-list">
+      <li>TypeScript, JavaScript, Python, Java, C#</li>
+    </ul>
 
-# Communications strategy
-- skill: Communications strategy
-  description: Content and marketing strategy,
+- skill: Frameworks & Libraries
+  description: |
+    <ul class="resume-item-list">
+      <li>NodeJS, NestJS, ASP.Net</li>
+      <li>Android, ReactJS</li>
+      <li>Arduino IDE</li>
+    </ul>
 
-# Digital content development and creation
-- skill: Digital content development and creation
-  description: Copy writing, graphic design, web design, front-end web development, print design
+- skill: DevOps & Infrastructure
+  description: |
+    <ul class="resume-item-list">
+      <li>Databases: MySQL, PostgreSQL, Redis, MongoDB</li>
+      <li>Message Brokers: MQTT, Kafka, RabbitMQ</li>
+      <li>AWS Services: EC2, ECS, SNS, CloudWatch, CodeDeploy, ECR, Lambda, EventBridge, S3, RDS, DynamoDB</li>
+      <li>Others: Nginx, Docker, Linux (Ubuntu)</li>
+    </ul>
+
+- skill: Hardware
+  description: |
+    <ul class="resume-item-list">
+      <li>Raspberry Pi, Arduino, ESP32-WROOM-DA, ESP32 Mini, Cortex-M4</li>      
+    </ul>

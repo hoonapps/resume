@@ -1,13 +1,9 @@
 # Degree
-- degree: Bachelor of Arts, Human Rights
-  uni: Yale University
-  year: 2004 &mdash; 2008
-  awards:
-    - award: Summa Cumme Laude graduate
-  summary: If you had any meaningful roles at college, feel free to write about them here
+- degree: 부트캠프
+  uni: 팀노바
+  year: 2019.09 &mdash; 2020.03
 
-- degree: High School Diploma
-  uni: Springfield High School
-  year: 2004
-  award: Most likely to succeed
-  summary: You can choose to have either a single or multiple awards
+- degree: 메카트로닉스공학과
+  uni: 한국공학대학교
+  year: 2013 - 2020
+  summary: 전자 회로, 제어공학, 로봇공학, 기계설계, CAD, CAM, 기계가공, 전자기기설계 및 제작,</br> PLC 프로그래밍, C언어 프로그래밍을 배웠습니다.

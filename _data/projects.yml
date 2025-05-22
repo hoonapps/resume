@@ -1,16 +1,63 @@
 # Projects
 # uncomment the urls if you wish to display them, and add your own URL
 
-# jazznotes.io
-- project: jazznotes.io
-  role: Founder & Primary Developer
-  duration: 2012 &mdash; Present
-  # url: "#"
-  description: Jazz Notes is an open source node/ember app that helps you keep track of your music compositions and new ideas.
+- project: ESP32_Firebase_RestApi_Stream
+  role:
+  duration: 2024.12
+  url: "https://github.com/hoonapps/ESP32_Firebase_RestApi_Stream"
+  description:
+    mobizt/Firebase-ESP32 라이브러리가 있는데 사용하면 계속 타임 아웃이 걸리는 현상이 생겨서 직접 구현한 프로젝트입니다.
+    <ul class="resume-item-list">
+    <li>ESP32 보드와 Firebase Realtime Database를 연동하여 실시간 데이터 스트리밍을 구현한 프로젝트입니다.</li>
+    <li>Firebase Rest API를 사용하여 ESP32 보드에서 데이터를 읽고 쓰는 기능을 구현했습니다.</li>
+    <li>Firebase Realtime Database의 실시간 데이터 업데이트를 ESP32 보드에서 수신하여 처리하는 기능을 구현했습니다.</li>
+    <li>Auth, Get, Put, Stream 방식의 기능을 지원합니다.</li>
+    </ul>
 
-# Springfield Community Outreach Group
-- project: Springfield Community Outreach Group
-  role: Co-Founder & Organizer
-  duration: 2007 &mdash; Present
-  # url: "#"
-  description: SCOG is a local monthly meetup in Springfield where we share opportunities to volunteer in the community and organize support for families and neighborhoods in need of assistance that the community can provide.
+- project: kr-validators
+  role:
+  duration: 2024.11
+  url: "https://www.npmjs.com/package/kr-validators"
+  description: <ul class="resume-item-list">
+    <li>npm 패키지로 배포된 한국어 전용 유효성 검사 라이브러리입니다.</li>
+    <li>이메일, 전화번호, 주민등록번호, 사업자등록번호, 통장계좌번호, 신용카드번호, 우편번호, 도로명주소, 법인등록번호 등 다양한 유효성 검사를 지원합니다.</li>
+    <li>정규표현식으로 구현되어 있어 사용이 간편합니다.</li>
+    </ul>
+
+- project: 커플 데이팅 앱
+  role:
+  duration: 2021.01 &mdash; 2021.04
+  url: "https://docs.google.com/presentation/d/1wgX1r8ZNELccslo3duthcH2rqZa2Qqlzvci_Yn6ATkE/edit?usp=sharing"
+  description:
+    커플끼리 연결이 맺어지면 채팅, 영상통화, 앨범 공유, 다이어리, 캘린더, 데이트장소 , 코스 리뷰, D-day 기능 등이 있습니다.
+    핵심 기능은 내가 보는 데이트코스의 유사한 태그와 평점을 통해 추천 알고리즘으로 데이트코스가 추천되는 것입니다.
+
+- project: 채팅 앱
+  role:
+  duration: 2021.06 &mdash; 2021.07
+  url: "https://docs.google.com/presentation/d/10IMTC11ojVVLhmO6-Dgo6BJfAQTe3NMlw3LSWWSn5Lc/edit?usp=sharing"
+  description: 회원가입, 로그인, 자동로그인, 프로필작성, 1:n 채팅 기능을 구현했습니다. 서버는 NettyServer를 이용하여 만들었습니다.
+
+- project: 애완동물 커뮤니티 사이트
+  role:
+  duration: 2020.12 &mdash; 2021.01
+  url: "https://docs.google.com/presentation/d/1-sSMz1zES8GUf39n5vBXu49CYsJitoHYauosuWsffNo/edit?usp=sharing"
+  description: 회원가입, 로그인, 자동로그인, 게시판, 애완동물 뉴스 크롤링, 통계, 기부, 결제모듈, 펫 정보, 펫 플레이스 정보 제공 , 1:n 채팅 기능을 구현했습니다.
+
+- project: 펫 프렌드 (애완동물 커뮤니티 앱)
+  role:
+  duration: 2020.10 &mdash; 2021.12
+  url: "https://docs.google.com/presentation/d/1ifL3hzgcM3XbF7C7wjQfWOwb2768-N4xdvieIZ4wLvA/edit?usp=sharing"
+  description: 애완동물 커뮤니티 앱. 인스타와 같은 형식으로 유저 간의 커뮤니티를 형성 할 수 있는 앱입니다.
+
+- project: 아동 지킴이 차량시스템
+  role:
+  duration: 2019.01 &mdash; 2020.06
+  url: "https://docs.google.com/presentation/d/1cjgHHQEvlNfwfSDDQOz5hFa2N1aHlR3xGpq31UXuG4g/edit?usp=sharing"
+  description: 아동지킴이 차량시스템으로 어린이집 통원 차량 내부에 아동이 방치되는 상황을 예방하는 시스템입니다.
+
+- project: 마림바 자동연주 시스템
+  role:
+  duration: 2018.06 &mdash; 2018.08
+  url: "https://docs.google.com/presentation/d/15dkpNf33NMUJFZBU-JYipaYj1hb1laN5geVu14Iu3GI/edit?usp=sharing"
+  description: 마림바 자동 연주시스템으로 마림바 악기를 보드와 모터를 연동시켜 연주를 자동으로 하는 시스템입니다.

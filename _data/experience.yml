@@ -1,7 +1,6 @@
 # Jobs
-# VP of Global Communications
 - company: (주)고스트패스
-  position: Backend Engineer
+  position: <a href="https://ghostpass.ai" target="_blank">@ </a>Backend Engineer
   duration: 2022.12 &mdash; Present
   summary: |
     탈중앙화 생체인증 및 보안 솔루션을 제공하는 서비스의 백엔드 엔지니어로 근무하며 <br/> 2024 CES 혁신상, 2025 CES 최고 혁신상 수상에 기여하였습니다. <br/>
@@ -10,15 +9,15 @@
       <li>고패스 서비스 react로 어드민 페이지, 근태관리 페이지 개발</li>
       <li>NICE 정보통신 결제 연동 백엔드 개발</li>
       <li>.net에서 Nest.js로 서버 개편</li>
+      <li>CPU에 과부하가 걸리는 설계를 다른 방식의 아이디어를 제안해서 CPU 부하율 90% 줄임</li>
       <li>github action, ecr, codedeploy로 배포 자동화 구축</li>
       <li>esp32 보드 SW 통신 및 신호제어 기능 개발</li>
       <li>포유발렛 서비스에서 발렛 및 주차 기능 백엔드 개발</li>
       <li>광주버스 gps 위치 기반 추출 하여 도착시간 계산 알고리즘 개발</li>
     </ul>
 
-# Communications Coordinator
 - company: (주)미스터팍
-  position: Backend Engineer
+  position: <a href="http://mepark.kr" target="_blank">@ </a>Backend Engineer
   duration: 2022.03  &mdash; 2022.12
   summary: |
     주차창 보험 시스템 및 발렛기능의 제공하는 서비스의 백엔드 엔지니어로 외주 개발하였습니다. <br/>
@@ -30,9 +29,8 @@
       <li>기존 통계 페이지 API 호출 시간 10초->1초로 개선</li>
     </ul>
 
-# Director of Digital Stratgy
 - company: (주)소셜인베스팅랩
-  position: Full Stack Engineer
+  position: <a href="https://socialinvestinglab.com" target="_blank">@ </a>Full Stack Engineer
   duration: 2021.07 &mdash; 2022.12
   summary: |
     SNS기반 주식매매 플랫폼인 커피하우스 앱 서비스의 풀스택 엔지니어로 근무하며 <br/> 누적 다운로드 수 약 45만명, 앱을 통해서 계좌 개설한 유저 4만 여명 달성했습니다. <br/>
@@ -47,14 +45,33 @@
     </ul>
 
 - company: (주)디케이랩
-  position: Backend Engineer
+  position: <a href="https://dklab.kr" target="_blank">@ </a>Backend Engineer
   duration: 2020.08  &mdash; 2021.06
   summary: |
-    주차창 보험 시스템 및 발렛기능의 제공하는 서비스의 백엔드 엔지니어로 외주 개발하였습니다. <br/>
+    제조공정 시각화 시스템을 제공하는 스마트 공장 솔루션 IFIS 서비스의 백엔드 개발자로 근무하였습니다. <br/>
     <ul class="resume-item-list">
-      <li>미팍 서비스 유저앱, 파트너스앱 백엔드(AWS 서버구축, 아키텍처 설계, DB 설계, API) 개발</li>
-      <li>미팍 서비스 react로 통계 페이지 개발</li>
-      <li>DB손해보험 연동 백엔드 개발</li>
-      <li>파트너스 주차장 보험료 결제 및 사용자 주자장 결제 시스템 개발</li>
-      <li>기존 통계 페이지 API 호출 시간 10초->1초로 개선</li>
+      <li>IFIS mini, pro 백엔드 API 개발</li>
+      <li>ERP, MES 시스템 기능 개발</li>
+      <li>제품 바코드 개발 및 DB화 진행</li>
+      <li>협력업체 실시간 공정 모니터링 기능 및 제어 연동 개발</li>
+    </ul>
+
+- company: 코인 거래 사이트 외주
+  position: System Engineer
+  duration: 2020.09  &mdash; 2020.12
+  summary: |
+    코인 거래 사이트 일부 기능 외주하였습니다. <br/>
+    <ul class="resume-item-list">
+      <li>Google Authenticator 기능 개발</li>
+      <li>Bitgo Express 서버와 연동 및 API </li>
+      <li>지갑에서 다른 지갑으로 코인 송금, 다중 송금 기능 개발</li>
+    </ul>
+
+- company: 이모션웨이브 아츠
+  position: System Engineer
+  duration: 2018.06  &mdash; 2018.08
+  summary: |
+    대학교 연계 인턴쉽 프로그램으로 마림바 자동 연주 모듈 개발하였습니다. <br/>
+    <ul class="resume-item-list">
+      <li>라즈베리파이, 아두이노로 솔레노이드 연결 및 자동 연주 시스템 개발</li>
     </ul>

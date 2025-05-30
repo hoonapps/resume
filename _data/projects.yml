@@ -43,7 +43,7 @@
 - project: 코인 거래 사이트
   role:
   duration: 2020.09  &mdash; 2020.12
-  url: "https://valetkorea.com"
+  url:
   description: |
     코인 거래 사이트 일부 기능 개발 <br/>
     <ul class="resume-item-list">

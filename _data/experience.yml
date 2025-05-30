@@ -4,6 +4,8 @@
   duration: 2022.12 &mdash; Present
   summary: |
     탈중앙화 생체인증 및 보안 솔루션을 제공하는 서비스의 백엔드 엔지니어로 근무하며 <br/> 2024 CES 혁신상, 2025 CES 최고 혁신상 수상에 기여하였습니다. <br/>
+
+
     <ul class="resume-item-list">
       <li>고패스 서비스 유저앱, 키오스크앱 백엔드(AWS 서버구축, 아키텍처 설계, DB 설계, API) 개발</li>
       <li>고패스 서비스 react로 어드민 페이지, 근태관리 페이지 개발</li>
@@ -14,21 +16,6 @@
       <li>esp32 보드 SW 통신 및 신호제어 기능 개발</li>
       <li>포유발렛 서비스에서 발렛 및 주차 기능 백엔드 개발</li>
       <li>광주버스 gps 위치 기반 추출 하여 도착시간 계산 알고리즘 개발</li>
-    </ul>
-
-- company: (주)미스터팍
-  position: <a href="http://mepark.kr" target="_blank">@ </a>Backend Engineer
-  duration: 2022.03  &mdash; 2022.12
-  summary: |
-    주차창 보험 시스템 및 발렛기능의 제공하는 서비스의 백엔드 엔지니어로 외주 개발하였습니다. <br/>
-    <ul class="resume-item-list">
-      <li>미팍 서비스 유저앱, 파트너스앱 백엔드(AWS 서버구축, 아키텍처 설계, DB 설계, API) 개발</li>
-      <li>미팍 서비스 react로 통계 페이지 개발</li>
-      <li>DB손해보험 연동 백엔드 개발</li>
-      <li>파트너스 주차장 보험료 결제 및 사용자 주자장 결제 시스템 개발</li>
-      <li>주차장 보험 포인트 결제 시스템 개발</li>
-      <li>주차 결제 완료 및 출차 카카오톡 알림 개발</li>
-      <li>기존 통계 페이지 API 호출 시간 10초->1초로 개선</li>
     </ul>
 
 - company: (주)소셜인베스팅랩
@@ -57,17 +44,6 @@
       <li>ERP, MES 시스템 기능 개발</li>
       <li>제품 바코드 개발 및 DB화 진행</li>
       <li>협력업체 실시간 공정 모니터링 기능 및 제어 연동 개발</li>
-    </ul>
-
-- company: 코인 거래 사이트 외주
-  position: System Engineer
-  duration: 2020.09  &mdash; 2020.12
-  summary: |
-    코인 거래 사이트 일부 기능 외주하였습니다. <br/>
-    <ul class="resume-item-list">
-      <li>Google Authenticator 기능 개발</li>
-      <li>Bitgo Express 서버와 연동 및 API </li>
-      <li>지갑에서 다른 지갑으로 코인 송금, 다중 송금 기능 개발</li>
     </ul>
 
 - company: 이모션웨이브 아츠

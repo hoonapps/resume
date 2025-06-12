@@ -25,7 +25,6 @@
       <li>MQTT 기반 실시간 통신 서버 도입으로 Firebase RTDB 의존도 감소 및 시스템 확장성 확보</li>
       <li>초기에는 1인 개발자로 시스템 아키텍처 및 핵심 기능을 전반적으로 구축하였으며, 이후 팀 확장과 함께 소규모 개발팀을 리딩하며 기술 설계, 우선순위 조율, 코드 리뷰 등 주도적인 역할 수행</li>
     </ul>
-    <br/>
 
 - company: (주)소셜인베스팅랩
   position: <a href="https://socialinvestinglab.com" target="_blank">@ </a>Full Stack Engineer

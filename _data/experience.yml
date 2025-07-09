@@ -3,75 +3,103 @@
   position: <a href="https://ghostpass.ai" target="_blank">@ </a>Backend Engineer
   duration: 2022.12 &mdash; Present
   summary: |
-    탈중앙화 생체인증 및 보안 솔루션을 제공하는 서비스의 백엔드 엔지니어로 근무하며 <br/> 2024 CES 혁신상, 2025 CES 최고 혁신상 수상에 기여하였습니다. <br/><br/>
+    백엔드 엔지니어 / 탈중앙화 생체인증 및 보안 솔루션<br/><br/>
+    <strong>[프로젝트 개요]</strong><br/>
+    탈중앙화 생체인증 기술 기반의 무인 출입/결제 시스템 개발.<br/>
+    IoT 디바이스, 실시간 인증 서버, 근태 시스템을 포함한 백엔드 전반을 설계하고 운영했습니다.<br/><br/>
 
-    <div class="resume-item-details"><strong>고패스</strong>(2022.12 - present) - 탈중앙화 생체인증 및 보안 솔루션 서비스</div>
-    <div class="resume-item-details">세부 업무내용</div>
+    <div class="resume-item-details">[담당 업무]</div>
     <ul class="resume-item-list">
-      <li>탈중앙화 생체 인증 솔루션의 백엔드 전반을 설계 및 개발</li>
-      <li>NestJS 기반 API 서버 및 ECS + Fargate 환경의 서버리스 아키텍처 구축</li>
-      <li>PostgreSQL, Redis 기반 데이터 저장 구조 설계 및 AWS 인프라 운영</li>
-      <li>NICE정보통신 결제 시스템 및 인증 서버 연동</li>
-      <li>ESP32(Arduino IDE) 기반 보드를 활용하여 무인 냉장고, 스피드게이트, 도어락 등 IoT 디바이스와의 양방향 통신 및 제어로직 구현</li>
-      <li>근태 관리 및 관리자 어드민 페이지(React) 개발</li>
-      <li>Github Actions, CodeDeploy, ECR, Secrets Manager를 활용한 CI/CD 자동화 구축</li>
+      <li>Node.js(NestJS) 기반 인증/출입/결제/근태관리 API 서버 및 비즈니스 로직 구현</li>
+      <li>ECS + Fargate 기반 MSA 아키텍처 설계 및 인프라 운영</li>
+      <li>PostgreSQL, Redis 기반 데이터 저장 구조 설계 및 성능 최적화</li>
+      <li>MQTT 기반 실시간 인증 통신 서버 설계 및 Firebase RTDB 대체</li>
+      <li>ESP32 기반 IoT 디바이스와 양방향 통신 로직 구현</li>
+      <li>React 기반 관리자용 어드민 페이지 개발</li>
+      <li>Github Actions, CodeDeploy, ECR, Secrets Manager를 활용한 CI/CD 자동화 구성</li>
     </ul>
-    <br/>
-    <div class="resume-item-details">주요성과</div>
+
+    <div class="resume-item-details">[주요 성과]</div>
     <ul class="resume-item-list">
-      <li>CES 2024 혁신상, 2025 최고 혁신상 수상 기술의 백엔드 구조 주도 개발</li>
-      <li>.NET 기반 레거시 서버를 NestJS로 전환하여 유지보수성 향상 및 클라우드 비용 약 40% 절감</li>
-      <li>병목 설계 구조 개선으로 CPU 사용률 90% 이상 감소</li>
-      <li>MQTT 기반 실시간 통신 서버 도입으로 Firebase RTDB 의존도 감소 및 시스템 확장성 확보</li>
-      <li>초기에는 1인 개발자로 시스템 아키텍처 및 핵심 기능을 전반적으로 구축하였으며, 이후 팀 확장과 함께 소규모 개발팀을 리딩하며 기술 설계, 우선순위 조율, 코드 리뷰 등 주도적인 역할 수행</li>
+      <li>CES 2024 혁신상, CES 2025 최고 혁신상 수상 기술의 백엔드 아키텍처 설계 및 구현 주도</li>
+      <li>.NET 레거시 시스템을 NestJS로 전환 → 유지보수성 향상 + AWS 비용 약 40% 절감</li>
+      <li>실시간 인증 병목 구조 해소 → 인증 서버 CPU 사용률 90% 이상 감소</li>
+      <li>MQTT 서버 구축 → Firebase RTDB 의존도 제거 + 실시간 처리 속도/안정성 향상</li>
+      <li>1인 개발자로 시스템 전반 설계 → 팀 확장 후 기술 리딩 및 코드 리뷰 주도</li>
+    </ul>
+
+    <div class="resume-item-details">[기술 스택]</div>
+    <ul class="resume-item-list">
+      <li>TypeScript, Node.js, NestJS, ASP.NET, PostgreSQL, RDS, MongoDB, Redis</li>
+      <li>MQTT, Firebase RTDB, ESP32, AWS ECS/Fargate, CodeDeploy, GitHub Actions</li>
+      <li>ECR, CloudWatch, React, Jest, E2E</li>
     </ul>
 
 - company: (주)소셜인베스팅랩
   position: <a href="https://socialinvestinglab.com" target="_blank">@ </a>Full Stack Engineer
   duration: 2021.07 &mdash; 2022.12
   summary: |
-    SNS기반 주식매매 플랫폼인 커피하우스 앱 서비스의 풀스택 엔지니어로 근무하며 <br/> 누적 다운로드 수 약 45만명, 앱을 통해서 계좌 개설한 유저 4만 여명 달성했습니다. <br/><br/>
+    풀스택 엔지니어 / SNS 기반 주식 매매 플랫폼<br/><br/>
+    <strong>[프로젝트 개요]</strong><br/>
+    주식 정보 + 커뮤니티 기능을 통합한 투자 플랫폼으로, 실시간 가격 연동, SNS 피드, 계좌 개설 및 거래까지 제공.<br/>
+    초기 앱 런칭 이후 백엔드 개발을 담당했습니다.<br/><br/>
 
-    <div class="resume-item-details"><strong>커피하우스</strong>(2021.07 - 2022.12) - SNS기반 주식매매 플랫폼</div>
-    <div class="resume-item-details">세부 업무내용</div>
+    <div class="resume-item-details">[담당 업무]</div>
     <ul class="resume-item-list">
-      <li>SNS 기반 주식매매 플랫폼인 ‘커피하우스’의 백엔드 시스템 개발(Node.js) 및 운영</li>
-      <li>Socket.IO + Redis 기반의 주식 실시간 가격 및 정보 처리 시스템 개발</li>
-      <li>신한투자증권, NH투자증권, KB증권, 삼성증권 계좌개설 및 거래연동 백엔드 개발</li>
-      <li>주식 기반 커뮤니티 및 태그 기능 개발</li>
-      <li>서버 배포 및 오류 메시지 사내 Slack 알림 기능 개발</li>
-      <li>계좌 개설 이벤트 기능 개발</li>
+      <li>Node.js 기반 API 서버 개발 및 AWS 인프라 운영</li>
+      <li>Socket.IO + Redis 기반 실시간 주식 데이터 처리 서버 개발</li>
+      <li>신한/NH/KB/삼성증권 API 연동으로 계좌 개설 및 매매 기능 구현</li>
+      <li>커뮤니티 피드, 종목 태그, 댓글 등 SNS 기능 개발</li>
+      <li>초기 1인 안드로이드 앱 개발 (MVP → 앱 출시)</li>
+      <li>AWS Lambda + EventBridge 기반 자동 종료 구조 구현</li>
+      <li>Slack 알림 기반 장애 대응 로직 구현</li>
     </ul>
-    <div class="resume-item-details">주요성과</div>
+
+    <div class="resume-item-details">[주요 성과]</div>
     <ul class="resume-item-list">
-      <li>안드로이드 앱을 1인 개발로 완수하여 출시 기간을 한 달 이상 단축, 초기 서비스 시장 진입 가속</li>
-      <li>서비스 런칭 후 누적 다운로드 45만 건, 앱을 통한 계좌 개설 4만 건 달성</li>
-      <li>Socket.IO + Redis 구조 최적화를 통해 실시간 주식 가격 반응 속도 30% 개선, 서버 부하 40% 이상 감소</li>
-      <li>Slack 알림 기반 운영 로직 도입으로 장애 대응 속도 40% 단축, 운영 대응 효율 2배 향상</li>
-      <li>개발 서버에 AWS Lambda + EventBridge 구조를 도입해 비업무 시간 자동 종료 프로세스를 구성, 클라우드 비용 약 30%절감</li>
+      <li>1인 MVP 완성 → 앱 런칭 1개월 단축</li>
+      <li>누적 다운로드 45만건, 계좌 개설 4만건 달성</li>
+      <li>Socket.IO + Redis 구조 최적화 → 반응 속도 30% 향상, 서버 부하 40% 이상 감소</li>
+      <li>Slack 운영 자동화 → 장애 대응 속도 40% 단축</li>
+      <li>Lambda 자동 종료 → EC2 비용 약 30% 절감</li>
+    </ul>
+
+    <div class="resume-item-details">[기술 스택]</div>
+    <ul class="resume-item-list">
+      <li>Node.js, TypeScript, Socket.IO, Redis, MySQL, Android(Java)</li>
+      <li>AWS Lambda, EventBridge, ECS/Fargate, SQS, Slack API</li>
     </ul>
 
 - company: (주)디케이랩
   position: <a href="https://dklab.kr" target="_blank">@ </a>Backend Engineer
-  duration: 2020.08  &mdash; 2021.06
+  duration: 2020.08 &mdash; 2021.06
   summary: |
-    제조공정 시각화 시스템을 제공하는 스마트 공장 솔루션 IFIS 서비스의 백엔드 개발자로 근무하였습니다. <br/><br/>
+    백엔드 엔지니어 / 스마트 공장 제조공정 시각화 솔루션<br/><br/>
+    <strong>[프로젝트 개요]</strong><br/>
+    공장 내 생산 설비 데이터를 수집·시각화하여 공정 상태를 실시간 모니터링하고,<br/>
+    협력사·ERP·MES 시스템과 연동하는 공정 가시화 솔루션을 개발했습니다.<br/><br/>
 
-    <div class="resume-item-details"><strong>IFIS</strong>(2020.08 - 2021.06) - 제조공정 시각화 시스템</div>
-    <div class="resume-item-details">세부 업무내용</div>
+    <div class="resume-item-details">[담당 업무]</div>
     <ul class="resume-item-list">
-      <li>IFIS 공정 시각화 시스템의 백엔드 설계, 개발 및 운영 전반 수행</li>
-      <li>생산 설비와 연동된 실시간 데이터 수집 API 및 MES·ERP 시스템 통합</li>
-      <li>협력업체 대상 공정 모니터링 기능 설계 및 연동</li>
-      <li>제품 바코드 기반 생산 이력 관리 및 DB화 구조 구축</li>
+      <li>WebSocket 기반 실시간 설비 데이터 수집 및 시각화 백엔드 구현</li>
+      <li>MES·ERP 연동 API 및 협력업체용 공정 모니터링 시스템 개발</li>
+      <li>바코드 기반 생산 이력 관리 시스템 및 스키마 설계</li>
+      <li>AWS Lambda + API Gateway 기반 서버리스 아키텍처 운영</li>
+      <li>DynamoDB 기반 비정형 데이터 구조 설계</li>
     </ul>
 
-    <div class="resume-item-details">주요성과</div>
+    <div class="resume-item-details">[주요 성과]</div>
     <ul class="resume-item-list">
-      <li>실시간 설비 연동 기반 시각화 시스템을 구축하여 공정 데이터의 실시간 가시성과 자동화된 상태 모니터링 체계 달성</li>
-      <li>협력업체 공정 흐름을 시각화함으로써 현장 대응 시간 단축 및 운영 관리 효율성 향상</li>
-      <li>Lambda의 cold start 이슈를 공장 운용시간 기준으로 EventBridge 트리거로 제어해 초기 API 응답 속도 개선 (600ms -≫100ms)</li>
-      <li>다양한 소규모 공장의 설비 구조와 데이터 처리 특성에 맞춰 DynamoDB 기반 유연한 스키마 설계를 적용, 안정적인 생산이력 관리 체계 확보</li>
+      <li>WebSocket 기반 설비 연동 → 공정 상태 실시간 반영 및 알림 처리</li>
+      <li>Lambda cold start 문제 → EventBridge 트리거로 600ms → 100ms로 개선</li>
+      <li>협력사 실시간 공정 가시화 → 대응 시간 단축 및 품질 향상</li>
+      <li>설비/공정 유형 대응 위한 MongoDB 기반 유연한 구조 설계</li>
+    </ul>
+
+    <div class="resume-item-details">[기술 스택]</div>
+    <ul class="resume-item-list">
+      <li>Node.js, TypeScript, Python, AWS Lambda, API Gateway, EventBridge</li>
+      <li>WebSocket, DynamoDB, MongoDB, S3, MES/ERP 연동 API, CloudWatch</li>
     </ul>
 
 - company: 이모션웨이브 아츠

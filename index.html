@@ -1,3 +1,770 @@
----
-layout: resume
----
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>김양훈 | 백엔드 엔지니어</title>
+  <meta name="description" content="6년차 백엔드 엔지니어 김양훈의 이력서">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #111827;
+      --gray-900: #1f2937;
+      --gray-700: #374151;
+      --gray-600: #4b5563;
+      --gray-500: #6b7280;
+      --gray-400: #9ca3af;
+      --gray-300: #d1d5db;
+      --gray-200: #e5e7eb;
+      --gray-100: #f3f4f6;
+      --gray-50: #f9fafb;
+      --white: #ffffff;
+      --accent: #2563eb;
+      --accent-light: #dbeafe;
+      --accent-dark: #1d4ed8;
+    }
+
+    html { background: var(--gray-100); }
+
+    body {
+      font-family: 'Inter', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      color: var(--gray-900);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--white);
+      min-height: 100vh;
+      box-shadow: 0 0 60px rgba(0,0,0,0.06);
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      padding: 3rem 2.5rem 2rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--gray-200);
+      flex-shrink: 0;
+    }
+
+    .header-info h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      color: var(--black);
+    }
+
+    .header-info .subtitle {
+      font-size: 1rem;
+      color: var(--gray-500);
+      font-weight: 500;
+      margin-top: 0.25rem;
+    }
+
+    .header-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .header-links a {
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .header-links a:hover { color: var(--accent-dark); }
+
+    .header-links a::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-right: 0.4rem;
+      vertical-align: middle;
+    }
+
+    .intro {
+      margin-top: 1.5rem;
+      font-size: 0.92rem;
+      color: var(--gray-600);
+      line-height: 1.85;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.6rem 1.8rem;
+      background: var(--accent);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .contact-btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      padding: 2rem 2.5rem;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .section:last-of-type { border-bottom: none; }
+
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--gray-200);
+    }
+
+    /* ===== EXPERIENCE ITEM ===== */
+    .exp-item {
+      margin-bottom: 2.5rem;
+    }
+
+    .exp-item:last-child { margin-bottom: 0; }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .exp-company {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .exp-company a {
+      color: var(--gray-400);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      margin-left: 0.25rem;
+      transition: color 0.15s;
+    }
+
+    .exp-company a:hover { color: var(--accent); }
+
+    .exp-duration {
+      font-size: 0.82rem;
+      color: var(--gray-500);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .exp-position {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    .exp-desc {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .exp-subtitle {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--gray-700);
+      margin: 1rem 0 0.4rem;
+      letter-spacing: 0.02em;
+    }
+
+    .exp-list {
+      padding-left: 1.1rem;
+      font-size: 0.85rem;
+      color: var(--gray-700);
+      line-height: 1.75;
+    }
+
+    .exp-list li { margin-bottom: 0.2rem; }
+
+    .exp-list li::marker { color: var(--gray-400); }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.75rem;
+    }
+
+    .tech-tag {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      background: var(--gray-100);
+      color: var(--gray-600);
+      font-size: 0.72rem;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    /* ===== PROJECT ITEM ===== */
+    .proj-item {
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .proj-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
+    .proj-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .proj-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .proj-name a {
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: all 0.15s;
+    }
+
+    .proj-name a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+    .proj-duration {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+
+    .proj-desc {
+      font-size: 0.85rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .proj-list {
+      padding-left: 1.1rem;
+      font-size: 0.83rem;
+      color: var(--gray-700);
+      line-height: 1.75;
+    }
+
+    .proj-list li { margin-bottom: 0.15rem; }
+    .proj-list li::marker { color: var(--gray-400); }
+
+    /* ===== SKILLS ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .skill-group h3 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gray-800);
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-group ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skill-group li {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      line-height: 1.8;
+      padding-left: 0.75rem;
+      position: relative;
+    }
+
+    .skill-group li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 4px;
+      height: 4px;
+      background: var(--gray-400);
+      border-radius: 50%;
+    }
+
+    /* ===== EDUCATION ===== */
+    .edu-item {
+      margin-bottom: 1rem;
+    }
+
+    .edu-item:last-child { margin-bottom: 0; }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .edu-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .edu-year {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+
+    .edu-degree {
+      font-size: 0.85rem;
+      color: var(--gray-600);
+    }
+
+    .edu-desc {
+      font-size: 0.82rem;
+      color: var(--gray-500);
+      margin-top: 0.25rem;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      padding: 1.5rem 2.5rem;
+      text-align: center;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .footer p {
+      font-size: 0.75rem;
+      color: var(--gray-400);
+    }
+
+    .footer a {
+      color: var(--gray-500);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer a:hover { color: var(--accent); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .container { box-shadow: none; }
+      .header, .section { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .header-top { flex-direction: column; text-align: center; }
+      .header-links { justify-content: center; }
+      .header-info h1 { font-size: 1.6rem; }
+      .exp-header, .proj-header, .edu-header { flex-direction: column; gap: 0.1rem; }
+      .skills-grid { grid-template-columns: 1fr; gap: 1rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print {
+      html { background: #fff; }
+      body { font-size: 11px; }
+      .container { box-shadow: none; max-width: 100%; }
+      .header { padding: 1rem 1.5rem 0.75rem; }
+      .section { padding: 1rem 1.5rem; }
+      .header-info h1 { font-size: 1.5rem; }
+      .contact-btn, .no-print { display: none !important; }
+      .exp-item { margin-bottom: 1.25rem; }
+      .section-title { margin-bottom: 0.75rem; padding-bottom: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-top">
+        <img src="images/myphoto2.jpg" alt="김양훈" class="avatar">
+        <div class="header-info">
+          <h1>김양훈</h1>
+          <p class="subtitle">Backend Engineer</p>
+          <div class="header-links">
+            <a href="https://github.com/hoonapps" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/yanghoon-kim-6332851a2/" target="_blank">LinkedIn</a>
+            <a href="https://medium.com/@didgns10" target="_blank">Medium</a>
+            <a href="mailto:didgns10@gmail.com">didgns10@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="intro">
+        100+ 마이크로서비스 환경에서 결제·주문·정산 파이프라인을 설계하고, 외부 제휴 채널 오픈을 리드하는 6년차 백엔드 엔지니어입니다.<br><br>
+        CES 최고 혁신상 수상 기술의 백엔드를 1인 설계·구축했고, .NET → NestJS 전환으로 AWS 비용 40% 절감, 인증 서버 CPU 90% 감소를 만들어냈습니다. 현재는 Kubernetes 기반 이커머스 플랫폼에서 레거시 이관과 제휴사 연동 프로젝트를 주도하고 있습니다.<br><br>
+        Claude Code, Cursor를 실무에 활용하며, LLM 에이전트 연동 서비스를 직접 설계·구현합니다. 기술을 빠르게 습득하되, 비즈니스 임팩트로 증명하는 엔지니어입니다.
+      </div>
+      <a href="mailto:didgns10@gmail.com" class="contact-btn no-print">Contact me</a>
+    </header>
+
+    <!-- EXPERIENCE -->
+    <section class="section">
+      <h2 class="section-title">Experience</h2>
+
+      <!-- 더블엔씨 -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-company">(주)더블엔씨 <a href="https://ncnc.app" target="_blank">ncnc.app</a></div>
+          <span class="exp-duration">2025.08 — Present</span>
+        </div>
+        <div class="exp-position">Backend Engineer · 니콘내콘 모바일 기프티콘 플랫폼 (누적 유저 210만, MAU 30만)</div>
+        <p class="exp-desc">모바일 기프티콘 거래 플랫폼 '니콘내콘'의 백엔드 시스템을 개발·운영. 결제, 주문, 정산, CMS 등 핵심 도메인의 마이크로서비스를 담당하며 Kubernetes 기반 인프라 운영까지 수행합니다.</p>
+
+        <div class="exp-subtitle">담당 업무</div>
+        <ul class="exp-list">
+          <li>NestJS 기반 모노레포(Turborepo) 아키텍처에서 API, Consumer, Cron 서비스 개발</li>
+          <li>외부 제휴 채널 연동 프로젝트 리드 — 뱅크샐러드, 웰컴페이먼츠, 네이버 가격비교 등 자사 시스템을 외부 플랫폼에 통합하는 API 설계 및 연동 전반 주도</li>
+          <li>Express.js 레거시 → NestJS 모노레포 이관 — 핵심 기능 마이그레이션 및 쿼리 배치 최적화</li>
+          <li>Kubernetes(Helm, ArgoCD) 기반 인프라 이관 및 GitOps 배포 체계 구축</li>
+          <li>AWS SQS 기반 비동기 주문·결제·환불 처리 파이프라인 설계 및 운영</li>
+          <li>C2C 거래 취소/환불 로직 및 니콘머니 정산 시스템 개발</li>
+          <li>Redis 캐싱 전략 수립 및 적용, OpenSearch 기반 검색 기능 고도화</li>
+          <li>Kubernetes 모니터링 Bot 개발 — Pod 장애 자동 감지, 원인 분석 및 Slack 리포트 자동화</li>
+          <li>Jest 기반 단위·E2E 테스트 작성 및 CI 파이프라인 내 자동화</li>
+          <li>AI 코드 리뷰 도입 및 기술 문서화 주도 — 팀 내 개발 표준 정립</li>
+        </ul>
+
+        <div class="exp-subtitle">주요 성과</div>
+        <ul class="exp-list">
+          <li>뱅크샐러드·웰컴페이먼츠·네이버 가격비교 등 3건의 외부 제휴 채널 오픈 리드 → 신규 트래픽 유입 경로 확보</li>
+          <li>레거시 → NestJS 이관 시 쿼리 및 로직 개선 — DB 조회 최적화, 불필요한 외부 API 호출 제거 → 크론잡 처리 속도 대폭 개선</li>
+          <li>Kubernetes Helm 기반 GitOps 배포 체계 구축 — 100+ 마이크로서비스 무중단 배포 및 시크릿 관리 자동화(IRSA) 도입</li>
+          <li>SQS 파이프라인 장애 포인트 분석·재설계 → 결제/환불 처리 실패율 감소, 데이터 정합성 확보</li>
+          <li>Kubernetes 모니터링 Bot 구축 — 장애 자동 감지·원인 분석·리포트 생성 자동화 → 장애 대응 시간 단축 및 운영 부담 감소</li>
+        </ul>
+
+        <div class="tech-tags">
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">NestJS</span>
+          <span class="tech-tag">Express</span>
+          <span class="tech-tag">Turborepo</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">MongoDB</span>
+          <span class="tech-tag">Redis</span>
+          <span class="tech-tag">OpenSearch</span>
+          <span class="tech-tag">Kubernetes</span>
+          <span class="tech-tag">Helm</span>
+          <span class="tech-tag">ArgoCD</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">AWS SQS</span>
+          <span class="tech-tag">Datadog</span>
+          <span class="tech-tag">Socket.IO</span>
+        </div>
+      </div>
+
+      <!-- 고스트패스 -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-company">(주)고스트패스 <a href="https://ghostpass.ai" target="_blank">ghostpass.ai</a></div>
+          <span class="exp-duration">2022.12 — 2025.08</span>
+        </div>
+        <div class="exp-position">Backend Engineer · 탈중앙화 생체인증 및 보안 솔루션</div>
+        <p class="exp-desc">탈중앙화 생체인증 기술 기반의 무인 출입/결제 시스템 개발. IoT 디바이스, 실시간 인증 서버, 근태 시스템을 포함한 백엔드 전반을 설계하고 운영했습니다.</p>
+
+        <div class="exp-subtitle">담당 업무</div>
+        <ul class="exp-list">
+          <li>Node.js(NestJS) 기반 인증/출입/결제/근태관리 API 서버 및 비즈니스 로직 구현</li>
+          <li>ECS + Fargate 기반 모노레포 아키텍처 설계 및 인프라 운영</li>
+          <li>PostgreSQL, Redis 기반 데이터 저장 구조 설계 및 성능 최적화</li>
+          <li>MQTT 기반 실시간 인증 통신 서버 설계 및 Firebase RTDB 대체</li>
+          <li>ESP32 기반 IoT 디바이스와 양방향 통신 로직 구현</li>
+          <li>React 기반 관리자용 어드민 페이지 개발</li>
+          <li>Github Actions, CodeDeploy, ECR, Secrets Manager를 활용한 CI/CD 자동화</li>
+        </ul>
+
+        <div class="exp-subtitle">주요 성과</div>
+        <ul class="exp-list">
+          <li>CES 2024 혁신상, CES 2025 최고 혁신상 수상 기술의 백엔드 아키텍처 설계 및 구현 주도</li>
+          <li>.NET 레거시 시스템을 NestJS로 전환 → 유지보수성 향상 + AWS 비용 약 40% 절감</li>
+          <li>실시간 인증 병목 구조 해소 → 인증 서버 CPU 사용률 90% 이상 감소</li>
+          <li>MQTT 서버 구축 → Firebase RTDB 의존도 제거 + 실시간 처리 속도/안정성 향상</li>
+          <li>초기 1인 개발 체제에서 시스템 전반 설계 → 이후 팀원과 협업하며 기술 리딩 및 코드 리뷰 문화 정착</li>
+        </ul>
+
+        <div class="tech-tags">
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">NestJS</span>
+          <span class="tech-tag">ASP.NET</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">MongoDB</span>
+          <span class="tech-tag">Redis</span>
+          <span class="tech-tag">MQTT</span>
+          <span class="tech-tag">Firebase</span>
+          <span class="tech-tag">ESP32</span>
+          <span class="tech-tag">AWS ECS/Fargate</span>
+          <span class="tech-tag">GitHub Actions</span>
+          <span class="tech-tag">React</span>
+        </div>
+      </div>
+
+      <!-- 소셜인베스팅랩 -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-company">(주)소셜인베스팅랩 <a href="https://socialinvestinglab.com" target="_blank">socialinvestinglab.com</a></div>
+          <span class="exp-duration">2021.07 — 2022.12</span>
+        </div>
+        <div class="exp-position">Full Stack Engineer · SNS 기반 주식 매매 플랫폼</div>
+        <p class="exp-desc">주식 정보 + 커뮤니티 기능을 통합한 투자 플랫폼. 실시간 가격 연동, SNS 피드, 계좌 개설 및 거래까지 제공하는 서비스의 백엔드를 담당했습니다.</p>
+
+        <div class="exp-subtitle">담당 업무</div>
+        <ul class="exp-list">
+          <li>Node.js 기반 API 서버 개발 및 AWS 인프라 운영</li>
+          <li>Socket.IO + Redis 기반 실시간 주식 데이터 처리 서버 개발</li>
+          <li>신한/NH/KB/삼성증권 API 연동으로 계좌 개설 및 매매 기능 구현</li>
+          <li>커뮤니티 피드, 종목 태그, 댓글 등 SNS 기능 개발</li>
+          <li>초기 1인 안드로이드 앱 개발 (MVP → 앱 출시)</li>
+          <li>AWS Lambda + EventBridge 기반 자동 종료 구조 구현</li>
+        </ul>
+
+        <div class="exp-subtitle">주요 성과</div>
+        <ul class="exp-list">
+          <li>1인 MVP 완성 → 앱 런칭 1개월 단축</li>
+          <li>누적 다운로드 45만건, 계좌 개설 4만건 달성</li>
+          <li>Socket.IO + Redis 구조 최적화 → 반응 속도 30% 향상, 서버 부하 40% 이상 감소</li>
+          <li>Lambda 자동 종료 → EC2 비용 약 30% 절감</li>
+          <li>Slack 운영 자동화 → 장애 대응 속도 40% 단축</li>
+        </ul>
+
+        <div class="tech-tags">
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">Socket.IO</span>
+          <span class="tech-tag">Redis</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Android(Java)</span>
+          <span class="tech-tag">AWS Lambda</span>
+          <span class="tech-tag">ECS/Fargate</span>
+          <span class="tech-tag">SQS</span>
+        </div>
+      </div>
+
+      <!-- 디케이랩 -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-company">(주)디케이랩 <a href="https://dklab.kr" target="_blank">dklab.kr</a></div>
+          <span class="exp-duration">2020.08 — 2021.06</span>
+        </div>
+        <div class="exp-position">Backend Engineer · 스마트 공장 제조공정 시각화 솔루션</div>
+        <p class="exp-desc">공장 내 생산 설비 데이터를 수집·시각화하여 공정 상태를 실시간 모니터링하고, 협력사·ERP·MES 시스템과 연동하는 공정 가시화 솔루션을 개발했습니다.</p>
+
+        <div class="exp-subtitle">담당 업무</div>
+        <ul class="exp-list">
+          <li>WebSocket 기반 실시간 설비 데이터 수집·시각화 백엔드 설계 및 구현</li>
+          <li>MES·ERP 시스템 연동 API 개발 — 협력사가 공정 상태를 실시간으로 조회할 수 있는 모니터링 시스템 구축</li>
+          <li>바코드 기반 생산 이력 추적 시스템 설계 — DynamoDB 비정형 스키마로 다양한 설비/공정 유형 대응</li>
+          <li>AWS Lambda + API Gateway 서버리스 아키텍처 설계 및 운영</li>
+        </ul>
+
+        <div class="exp-subtitle">주요 성과</div>
+        <ul class="exp-list">
+          <li>Lambda cold start 병목 분석 → EventBridge warm-up 트리거 도입, 응답 시간 600ms → 100ms (83% 개선)</li>
+          <li>WebSocket 기반 실시간 설비 연동 → 기존 폴링 방식 대비 데이터 반영 지연 제거, 장애 알림 즉시 처리</li>
+          <li>협력사 전용 공정 가시화 대시보드 구축 → 수동 보고 프로세스 제거, 대응 시간 단축</li>
+        </ul>
+
+        <div class="tech-tags">
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">AWS Lambda</span>
+          <span class="tech-tag">API Gateway</span>
+          <span class="tech-tag">WebSocket</span>
+          <span class="tech-tag">DynamoDB</span>
+          <span class="tech-tag">MongoDB</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <div class="proj-name">ClawShow — AI 소셜 플랫폼</div>
+          <span class="proj-duration">2025</span>
+        </div>
+        <p class="proj-desc">AI 에이전트들이 참여하는 소셜 플랫폼을 풀스택으로 설계·개발한 사이드 프로젝트</p>
+        <ul class="proj-list">
+          <li>NestJS(Fastify) + TypeORM + PostgreSQL 기반 백엔드 설계 및 구현</li>
+          <li>OpenClaw API 게이트웨이를 통한 외부 LLM 에이전트 연동 및 세션 관리</li>
+          <li>AI MBTI 성격 테스트 시스템 — 질문 자동 생성·응답 분석·결과 산출</li>
+          <li>Socket.IO 기반 실시간 테스트 진행 상황 업데이트</li>
+          <li>Next.js + React 19 + Tailwind CSS 프론트엔드 개발</li>
+          <li>AI 도구(Claude Code, Cursor)를 활용한 빠른 프로토타이핑</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <div class="proj-name">AI 자동매매 트레이딩 봇</div>
+          <span class="proj-duration">2025</span>
+        </div>
+        <p class="proj-desc">OpenAI API를 활용한 암호화폐 선물 자동매매 시스템</p>
+        <ul class="proj-list">
+          <li>Python + CCXT 기반 Bybit 거래소 연동 및 실시간 WebSocket 데이터 처리</li>
+          <li>OpenAI API로 콘텐츠 분석 → AI 기반 매매 전략 자동 생성</li>
+          <li>pandas-TA 기반 기술적 분석 및 자동 매수/매도 실행</li>
+          <li>Telegram Bot 실시간 알림 및 Excel 일간 리포트 자동 생성</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <div class="proj-name"><a href="https://github.com/hoonapps/ESP32_Firebase_RestApi_Stream" target="_blank">ESP32_Firebase_RestApi_Stream</a></div>
+          <span class="proj-duration">2024.12</span>
+        </div>
+        <p class="proj-desc">기존 라이브러리의 타임아웃 이슈를 해결하기 위해 직접 구현한 오픈소스 프로젝트</p>
+        <ul class="proj-list">
+          <li>ESP32 보드와 Firebase Realtime Database 간 실시간 데이터 스트리밍 구현</li>
+          <li>Firebase Rest API 기반 Auth, Get, Put, Stream 기능 지원</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <div class="proj-name"><a href="https://www.npmjs.com/package/kr-validators" target="_blank">kr-validators</a></div>
+          <span class="proj-duration">2024.11</span>
+        </div>
+        <p class="proj-desc">npm에 배포한 한국어 전용 유효성 검사 라이브러리</p>
+        <ul class="proj-list">
+          <li>이메일, 전화번호, 주민등록번호, 사업자등록번호 등 유효성 검사 지원</li>
+          <li>정규표현식 기반 경량 구현</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-header">
+          <div class="proj-name"><a href="https://valetkorea.com" target="_blank">주차장 보험·발렛 서비스 (미팍)</a></div>
+          <span class="proj-duration">2022.03 — 2022.12</span>
+        </div>
+        <p class="proj-desc">주차장 보험 및 발렛 서비스의 백엔드 개발</p>
+        <ul class="proj-list">
+          <li>AWS 서버 구축, 아키텍처·DB 설계, API 개발</li>
+          <li>DB손해보험 연동 및 결제 시스템 개발</li>
+          <li>통계 페이지 API 응답 시간 10초 → 1초로 개선</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <ul>
+            <li>TypeScript, JavaScript, Python, Java, C#</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Frameworks & Libraries</h3>
+          <ul>
+            <li>NestJS, Express, Next.js, React</li>
+            <li>Sequelize, TypeORM, Mongoose</li>
+            <li>Socket.IO, GraphQL</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>DevOps & Infrastructure</h3>
+          <ul>
+            <li>MySQL, PostgreSQL, MongoDB, Redis, DynamoDB</li>
+            <li>OpenSearch, Elastic App Search</li>
+            <li>AWS SQS, MQTT</li>
+            <li>ECS/Fargate, Lambda, S3, RDS, ECR</li>
+            <li>Kubernetes, Helm, ArgoCD, Docker</li>
+            <li>GitHub Actions, CodeDeploy</li>
+            <li>Datadog APM, CloudWatch</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>AI & Productivity</h3>
+          <ul>
+            <li>Claude Code, Cursor 등 AI 코딩 도구 활용</li>
+            <li>OpenAI API, LLM 에이전트 연동 서비스 설계·구현</li>
+            <li>AI 기반 코드 리뷰, 테스트 작성, 문서화 자동화</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+
+      <div class="edu-item">
+        <div class="edu-header">
+          <span class="edu-name">팀노바</span>
+          <span class="edu-year">2019.09 — 2020.03</span>
+        </div>
+        <div class="edu-degree">부트캠프</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-header">
+          <span class="edu-name">한국공학대학교</span>
+          <span class="edu-year">2013 — 2020</span>
+        </div>
+        <div class="edu-degree">메카트로닉스공학과</div>
+        <p class="edu-desc">전자 회로, 제어공학, 로봇공학, PLC 프로그래밍, C언어 프로그래밍</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>Made by <a href="https://github.com/hoonapps">@hoonapps</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>

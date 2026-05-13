@@ -4,6 +4,7 @@ _site
 _vendor
 
 # Local interview/resume coaching notes. Keep these out of the public resume site.
+DESIGN.md
 coaching.md
 experience-stories.md
 ai-workflow-playbook.md

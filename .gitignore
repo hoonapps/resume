@@ -10,5 +10,6 @@ ai-workflow-playbook.md
 job-tailoring-template.md
 
 # Local one-off exports or tailored drafts.
+ignore/
 dor.html
 *.pdf

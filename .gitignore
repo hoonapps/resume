@@ -2,3 +2,13 @@ _site
 .sass-cache
 .DS_Store
 _vendor
+
+# Local interview/resume coaching notes. Keep these out of the public resume site.
+coaching.md
+experience-stories.md
+ai-workflow-playbook.md
+job-tailoring-template.md
+
+# Local one-off exports or tailored drafts.
+dor.html
+*.pdf

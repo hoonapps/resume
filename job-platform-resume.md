@@ -11,7 +11,7 @@
 - 결제, 주문, 환불, 정산, 인증, 제휴 연동처럼 상태와 예외가 많은 도메인의 백엔드 설계·개발
 - 외부 API 실패, 중복 요청, 재시도, 부분 성공, 보상 처리, 비동기 메시지 유실 같은 운영 리스크 대응
 - Express/.NET 레거시 시스템을 NestJS, 모노레포, 클라우드 운영 구조로 점진 전환
-- Kubernetes, ECS/Fargate, GitOps, Grafana 기반 배포·모니터링·장애 대응
+- Kubernetes, ECS/Fargate, GitOps, Grafana/Prometheus/Datadog 기반 배포·모니터링·장애 대응
 - IoT 디바이스, MQTT, ESP32, 스피드게이트 등 서버 밖 장치와 연결되는 제품 흐름 개발
 
 ## 기술 스택
@@ -19,7 +19,7 @@
 - **Backend**: TypeScript, Node.js, NestJS, Express, Spring Boot
 - **Database**: MySQL, PostgreSQL, MongoDB, Redis, OpenSearch
 - **Messaging / Jobs**: AWS SQS, AWS SNS, MQTT, node-cron, Kubernetes CronJob
-- **Infrastructure**: Kubernetes, EKS, Helm, ArgoCD, Docker, AWS ECS/Fargate, Lambda, RDS, S3, GitHub Actions, CloudWatch, Grafana
+- **Infrastructure**: Kubernetes, EKS, Helm, ArgoCD, Docker, AWS ECS/Fargate, Lambda, RDS, S3, GitHub Actions, CloudWatch, Grafana, Prometheus, Datadog
 
 ## 경력 요약
 
@@ -37,20 +37,20 @@
 2025.08 - 재직 중  
 Backend Engineer / 니콘내콘 모바일 기프티콘 플랫폼
 
-누적 유저 210만, MAU 30만, 하루 주문 1만 건·거래액 1억 원 이상 규모의 모바일 기프티콘 거래 플랫폼에서 주문·결제·환불·정산·CMS와 외부 제휴 연동을 개발·운영하고 있습니다. 24개 레포지토리에 분산된 Express 레거시를 NestJS 모노레포로 이관하는 작업에 이관 초기부터 참여해, 결제·제휴·공통 도메인 계층을 담당하고 있습니다.
+누적 유저 210만, MAU 30만, 하루 주문 1만 건·거래액 1억 원 이상 규모의 모바일 기프티콘 거래 플랫폼에서 주문·결제·환불·정산·CMS와 외부 제휴 연동을 개발·운영하고 있습니다. 여러 레포지토리에 분산된 Express 레거시를 NestJS 모노레포로 이관하는 작업에 이관 초기부터 참여해, 결제·제휴·공통 도메인 계층을 담당하고 있습니다.
 
 #### 대표 기여
 
 - **결제 성공 후 기프티콘 발송 누락 위험을 구조적으로 제거했습니다.** 기존에는 PG 콜백 처리와 SQS FIFO 발행 사이에 원자성 갭이 있어, 결제는 성공했지만 발송 이벤트가 유실되거나 사용자가 프론트 폴링으로 1분간 대기한 뒤 실패 안내를 받을 수 있었습니다. Transactional Outbox를 설계·구현해 결제 상태 변경과 발행 대상 기록을 하나의 트랜잭션으로 묶고, MySQL binlog CDC를 primary path로 Redis Leader Election·atomic claim·fallback polling·재시도 한도를 적용해 발행 실패를 추적·재처리 가능한 상태로 전환했습니다. 주 5~8건 발생하던 '결제 완료 후 발송 누락' CS 문의를 0건으로 줄였습니다.
 - **결제 콜백 멱등성과 주문 상태 전이 안정성을 보강했습니다.** 중복 콜백, PG 창 이탈, 프론트 취소, 자동 취소, consumer 재처리가 겹치는 상황에서도 주문/결제 상태가 중복 변경되지 않도록 멱등 처리 기준을 정의했습니다.
-- **24개 레포에 분산된 레거시를 NestJS + Turborepo 모노레포로 이관하고 있습니다.** API·consumer·cron·도메인 모델이 여러 레포에 흩어져 변경 영향도 파악이 어려웠습니다. CMS와 신규 앱 기능부터 이관해 현재 6개 API·4개 consumer·24개 cron·공통 4계층 구조로 정리하며 변경 범위와 배포 단위를 줄이고 있습니다.
+- **여러 레포지토리에 분산된 레거시를 NestJS + Turborepo 모노레포로 이관하고 있습니다.** API·consumer·cron·도메인 모델이 여러 레포에 흩어져 변경 영향도 파악이 어려웠습니다. CMS와 신규 앱 기능부터 이관해 여러 API·consumer·cron 실행 단위와 공통 계층 구조를 정리하며 변경 범위와 배포 단위를 줄이고 있습니다.
 - **공통 계층의 도메인 경계를 구조적으로 정리했습니다.** 공통 서비스 간 수평 참조가 늘며 사이드 이펙트 위험이 커지자, common-core/domain/infra/service로 계층을 분리하고 `no-horizontal-reference` 커스텀 ESLint 룰로 공통 계층에 범용 로직만 남도록 강제했습니다.
 - **뱅크샐러드 제휴 연동을 설계부터 운영까지 담당했습니다.** 뱅크샐러드 제휴 API 연동 서비스를 직접 개발해 신규 트래픽 유입 경로를 확보하고, 웰컴페이먼츠·네이버 가격비교 채널 연동을 함께 리드했습니다.
-- **70여 개 서비스가 운영되는 EKS 환경의 운영 가시성을 개선했습니다.** EKS + ArgoCD GitOps 환경에서 Helm 배포, Grafana 모니터링, Kubernetes 모니터링 Bot, Slack 리포트를 통해 Pod 장애 감지와 원인 파악 흐름을 개선했습니다.
+- **100개 이상 배포 단위가 운영되는 EKS/GitOps 환경의 운영 가시성을 개선했습니다.** EKS + ArgoCD 기반 환경에서 Helm 배포, 수십 개 CronJob, Ingress, Secret 구성을 점검하고, Grafana·Prometheus·Datadog 기반 관측 환경에서 API·consumer·batch 작업의 장애 징후를 추적했습니다.
 
 #### 기술 스택
 
-TypeScript, NestJS, Express, Turborepo, MySQL, MongoDB, Redis, OpenSearch, AWS SQS, Kubernetes, EKS, Helm, ArgoCD, Docker, Grafana, Socket.IO
+TypeScript, NestJS, Express, Turborepo, MySQL, MongoDB, Redis, OpenSearch, AWS SQS, Kubernetes, EKS, Helm, ArgoCD, Docker, Grafana, Prometheus, Datadog
 
 ### (주)고스트패스
 

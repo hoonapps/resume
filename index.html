@@ -509,9 +509,9 @@
         </div>
       </div>
       <div class="intro">
-        결제·주문·인증·외부 연동처럼 실패 비용이 큰 도메인에서 정합성, 상태 전이, 재처리, 운영 예외를 백엔드 구조로 풀어온 6년차 백엔드 엔지니어입니다.<br><br>
-        현재는 모바일 기프티콘 플랫폼에서 결제 정합성, 레거시 모노레포 이관, Kubernetes 운영, 외부 제휴 연동을 담당하고 있습니다. 이전에는 생체인증 기반 무인 출입·결제 시스템에서 인증 데이터의 경계와 디바이스 책임을 재정의해 특허 등록된 키오스크 인증 플로우와 장치 연동 기반을 설계했습니다.<br><br>
-        기능 목록만 보고 바로 구현하기보다, 사용자와 운영자가 실제로 거치는 흐름을 먼저 이해하려고 합니다. 결제, 인증, 제휴 연동처럼 여러 상태와 예외가 얽힌 도메인에서는 비즈니스 흐름을 충분히 파악한 뒤 코드와 구조에 녹이는 편입니다. 익숙하지 않은 도메인도 빠르게 파고들어 문제를 정리하고, 필요한 역할이 비어 있으면 직접 메우며 일을 끝까지 가져가려고 합니다.
+        결제·주문·인증·외부 연동처럼 한 번의 실패가 사용자 신뢰와 운영 비용으로 이어지는 도메인을 주로 다뤄온 6년차 백엔드 엔지니어입니다. 비즈니스 플로우를 빠르게 이해하고, 그 안에서 정합성이 깨질 수 있는 지점과 운영자가 감당해야 할 예외 상황을 찾아 백엔드 구조로 해결하는 데 강점이 있습니다.<br><br>
+        기능을 빠르게 구현하는 데 그치지 않고, 그 기능이 실제 사용자 흐름과 운영 과정에서 어떻게 실패할 수 있는지를 함께 봅니다. 요구사항이 명확하지 않아도 도메인 흐름을 정리하고, 필요한 상태·예외·재처리 기준을 코드와 데이터 구조에 반영해 일을 맡긴 사람이 진행 상황과 결과를 예측할 수 있게 만드는 편입니다.<br><br>
+        결제 성공 후 발송 이벤트가 유실되는 문제, 외부 콜백 중복 처리, 인증 결과와 실제 디바이스 제어 사이의 불일치처럼 기능 구현만으로는 놓치기 쉬운 흐름을 메시징·모니터링·운영 구조로 정리해왔습니다. 레거시 시스템은 운영 중인 서비스의 리스크를 고려해 점진적으로 전환하고, AI 도구는 레거시 분석, 리뷰 체크리스트, 테스트 시나리오, 문서화 vault 같은 개발 산출물로 연결해 활용하고 있습니다.
       </div>
       <div class="profile-pills">
         <span class="profile-pill">결제 정합성</span>
@@ -550,16 +550,17 @@
           <span class="exp-duration">2025.08 — Present</span>
         </div>
         <div class="exp-position">Backend Engineer · 니콘내콘 모바일 기프티콘 플랫폼 (누적 유저 210만, MAU 30만)</div>
-        <p class="exp-desc">모바일 기프티콘 거래 플랫폼의 백엔드 시스템을 개발·운영합니다. 결제, 주문, 환불, 정산, CMS, 외부 제휴 연동 등 핵심 도메인의 기능 개발과 레거시 개선을 담당하고, EKS 기반 Kubernetes 운영 환경에서는 배포, 모니터링, 장애 대응 자동화 개선에 참여하고 있습니다.</p>
+        <p class="exp-desc">모바일 기프티콘 거래 플랫폼의 백엔드 시스템을 개발·운영합니다. 결제, 주문, 환불, 정산, CMS, 외부 제휴 연동 등 핵심 도메인의 기능 개발과 레거시 개선을 담당합니다. 여러 레포지토리에 분산된 Express 레거시를 NestJS 모노레포로 이관하는 작업에 초기부터 참여해 결제·제휴·공통 도메인 계층을 정리하고, EKS 기반 Kubernetes 운영 환경에서는 배포·모니터링·장애 대응 흐름을 개선하고 있습니다.</p>
 
         <div class="exp-subtitle">핵심 기여</div>
         <ul class="exp-list">
-          <li>외부 결제 콜백 후 SQS FIFO 메시지를 발행하던 구조에서, 결제 성공과 메시지 발행 사이의 원자성 갭을 발견하고 <strong>Transactional Outbox 기반 복구 흐름</strong>으로 개선했습니다. 결제 성공 후 기프티콘 발송이 누락되는 케이스를 추적·재처리 가능한 상태로 전환했습니다.</li>
+          <li>외부 결제 콜백 후 SQS FIFO 메시지를 발행하던 구조에서, 결제 성공과 메시지 발행 사이의 원자성 갭을 발견하고 <strong>Transactional Outbox 기반 복구 흐름</strong>으로 개선했습니다. 결제 성공 후 기프티콘 발송이 누락되는 케이스를 추적·재처리 가능한 상태로 전환하고, 반복 발생하던 관련 CS 문의를 해소했습니다.</li>
           <li>중복 콜백, PG 창 이탈, 프론트 취소, 자동 취소, consumer 재처리가 겹치는 상황을 고려해 <strong>결제 콜백 멱등성</strong>과 주문/결제 상태 전이 안정성을 보강했습니다.</li>
           <li>여러 레포지토리에 분산되어 있던 Express.js 기반 레거시 기능을 <strong>NestJS + Turborepo 모노레포</strong>로 점진 이관하고 있으며, API/consumer/cron/도메인 모델의 변경 영향도를 줄이는 방향으로 구조를 정리하고 있습니다.</li>
-          <li>공통 서비스 간 수평 참조로 도메인 경계가 흐려지는 문제를 경험하고, 계층 분리와 커스텀 ESLint 룰로 공통 계층에는 정말 공통인 로직만 남기는 방향으로 구조를 조정했습니다.</li>
-          <li>EKS + ArgoCD GitOps 기반 운영 환경에서 Helm 배포, IRSA 시크릿 관리, <strong>Grafana 모니터링과 Kubernetes 모니터링 Bot</strong>을 활용해 장애 감지와 원인 파악 흐름을 개선했습니다.</li>
-          <li>뱅크샐러드, 웰컴페이먼츠, 네이버 가격비교 등 외부 제휴 채널 연동을 리드해 신규 트래픽 유입 경로를 확보했습니다.</li>
+          <li>공통 서비스 간 수평 참조로 도메인 경계가 흐려지는 문제를 경험하고, 계층 분리와 커스텀 ESLint 룰로 공통 계층에는 범용 로직만 남기는 방향으로 구조를 조정했습니다.</li>
+          <li>EKS + ArgoCD GitOps 기반의 <strong>100개 이상 배포 단위</strong>와 수십 개 CronJob이 운영되는 환경에서 Helm 배포, IRSA 시크릿, 배치 실행 흐름을 점검했습니다.</li>
+          <li>Grafana, Prometheus, Alertmanager, Loki/Promtail, Datadog 기반 관측 환경에서 API, consumer, batch 작업의 실행 상태와 장애 징후를 추적했습니다.</li>
+          <li>뱅크샐러드 제휴 API 연동을 설계부터 운영까지 담당해 신규 트래픽 유입 경로를 확보하고, 웰컴페이먼츠·네이버 가격비교 채널 연동을 함께 리드했습니다.</li>
           <li>Codex, Claude Code, Cursor를 활용해 <strong>문서화 vault, 리뷰 체크리스트, 테스트 시나리오</strong>를 만들고 레거시 분석·리뷰·문서화 흐름을 개선했습니다.</li>
         </ul>
 
@@ -578,7 +579,8 @@
           <span class="tech-tag">Docker</span>
           <span class="tech-tag">AWS SQS</span>
           <span class="tech-tag">Grafana</span>
-          <span class="tech-tag">Socket.IO</span>
+          <span class="tech-tag">Prometheus</span>
+          <span class="tech-tag">Datadog</span>
         </div>
       </div>
 
@@ -589,12 +591,12 @@
           <span class="exp-duration">2022.12 — 2025.08</span>
         </div>
         <div class="exp-position">Backend Engineer · 탈중앙화 생체인증 및 보안 솔루션</div>
-        <p class="exp-desc">탈중앙화 생체인증 기술을 활용한 무인 출입·근태·결제 시스템을 개발했습니다. 모바일 단말 중심의 생체 비교 흐름이 가진 보안·속도 한계를 발견하고, 실제 얼굴 비교가 키오스크 장치 내부에서 끝나는 인증 플로우를 제안·설계했습니다. 이후 인증 결과가 ESP32 디바이스, 스피드게이트, 근태·결제 흐름으로 이어지는 백엔드 구조와 운영 기반을 구축했습니다.</p>
+        <p class="exp-desc">탈중앙화 생체인증 기술을 활용한 무인 출입·근태·결제 시스템을 개발했습니다. 모바일 단말 중심의 생체 비교 흐름이 가진 보안·속도 한계를 발견하고, 인증 검증 책임을 키오스크 장치 쪽으로 분리하는 플로우를 제안·설계했습니다. 이후 인증 결과가 ESP32 디바이스, 스피드게이트, 근태·결제 흐름으로 이어지는 백엔드 구조와 운영 기반을 구축했습니다.</p>
 
         <div class="exp-subtitle">핵심 기여</div>
         <ul class="exp-list">
           <li>.NET 레거시 시스템은 DB Stored Procedure에 비즈니스 로직이 집중되어 디버깅·모니터링·배포 단위 분리가 어려웠습니다. 이를 NestJS 애플리케이션 계층과 RDS 데이터 계층으로 분리하고 ECS/Fargate 기반으로 운영해 <strong>AWS 비용을 약 40% 절감</strong>했습니다.</li>
-          <li>기존 모바일 비교 인증 방식은 인증 시점마다 여러 사용자 단말과 서버를 왕복해야 했고, 민감한 생체 데이터의 전달 범위와 인증 속도 측면에서 한계가 있었습니다. 이를 개선하기 위해 <strong>실제 얼굴 비교가 키오스크 장치 내부에서 끝나는 인증 플로우</strong>를 제안·설계했고, 해당 방식은 <strong>특허로 등록</strong>되었습니다.</li>
+          <li>기존 모바일 비교 인증 방식은 인증 시점마다 여러 사용자 단말과 서버를 왕복해야 했고, 민감한 생체 데이터의 전달 범위와 인증 속도 측면에서 한계가 있었습니다. 이를 개선하기 위해 <strong>인증 검증 책임을 키오스크 장치 쪽으로 분리하는 플로우</strong>를 제안·설계했고, 해당 방식은 <strong>특허로 등록</strong>되었습니다.</li>
           <li>키오스크 인증 결과가 실제 출입 제어까지 이어지도록 ESP32 기반 디바이스 소프트웨어와 스피드게이트 통신 연동을 구현했습니다.</li>
           <li>Firebase RTDB에 의존하던 실시간 장치 상태 동기화 일부를 MQTT 기반 통신 서버로 대체해, 키오스크·서버·IoT 디바이스 간 인증 결과와 출입 제어 명령을 전달했습니다.</li>
           <li>본인인증·결제 모듈이 C/Java SDK 중심으로 제공되는 제약이 있어, NestJS 핵심 서버에 런타임 의존성을 섞지 않고 모노레포 내 Spring Boot 연동 서버를 별도로 구성했습니다.</li>
@@ -634,7 +636,7 @@
           <li>주식 계좌 개설 이벤트를 담당하며 외부 증권사 확인, 보상 지급, 사용자 알림이 한 요청에 묶이면 지연·실패·중복 지급 위험이 커진다고 판단했습니다. 이벤트 참여 조건 검증과 계좌 개설 상태 확인, 보상 지급 요청을 큐 기반 후속 처리로 분리했습니다.</li>
           <li>보상 처리 결과를 SNS/앱 푸시로 비동기 안내하고, 실패·재시도 상황에서도 사용자가 이벤트 진행 상태를 확인할 수 있는 알림 흐름을 구성했습니다.</li>
           <li>초기 Android 앱 MVP를 1인 개발해 백엔드 개발만 기다리던 출시 병목을 줄이고, 앱 출시 일정을 약 1개월 단축했습니다.</li>
-          <li>Socket.IO + Redis 기반 실시간 주식 데이터 전달 구조의 구현·개선에 참여했습니다. 종목별 구독 단위로 필요한 데이터만 전달하고 Redis 기반 데이터 공유를 적용해 <strong>반응 속도 30% 개선, 서버 부하 40% 이상 절감</strong>에 기여했습니다.</li>
+          <li>Socket.IO + Redis 기반 실시간 주식 데이터 전달 구조에서 종목별 구독 처리와 Redis 기반 데이터 공유 개선 작업을 수행해 <strong>반응 속도 30% 개선, 서버 부하 40% 이상 절감</strong>에 기여했습니다.</li>
           <li>커뮤니티 피드, 종목 태그, 댓글 기능을 주식 데이터와 연결해 사용자가 종목 중심으로 콘텐츠와 투자 정보를 탐색할 수 있는 제품 흐름을 만들었습니다.</li>
           <li>AWS Lambda + EventBridge 기반 자동 종료와 Slack 운영 알림을 도입해 야간/비활성 시간대의 운영 비용과 장애 확인 부담을 줄였습니다.</li>
           <li>서비스는 <strong>누적 다운로드 45만 건, 계좌 개설 4만 건</strong>을 달성했습니다.</li>
@@ -648,8 +650,11 @@
           <span class="tech-tag">MySQL</span>
           <span class="tech-tag">Android(Java)</span>
           <span class="tech-tag">AWS Lambda</span>
+          <span class="tech-tag">EventBridge</span>
           <span class="tech-tag">ECS/Fargate</span>
           <span class="tech-tag">SQS</span>
+          <span class="tech-tag">AWS SNS</span>
+          <span class="tech-tag">Slack API</span>
         </div>
       </div>
 
@@ -708,7 +713,7 @@
           <div class="proj-name">AI 콘텐츠 자동화 워크플로우</div>
           <span class="proj-duration">2026</span>
         </div>
-        <p class="proj-desc">OpenClaw, Claude Code, Codex CLI를 활용해 블로그와 콘텐츠 제작 과정을 자동화하는 개인 워크플로우를 만들었습니다. 반복 작업을 AI 생성, 사람 검수, 브라우저 자동화, 발행 이력 관리로 나누어 실제 업무 자동화에도 적용 가능한 패턴을 검증했습니다.</p>
+        <p class="proj-desc">OpenClaw, Claude Code, Codex를 활용해 블로그와 콘텐츠 제작 과정을 자동화하는 개인 워크플로우를 만들었습니다. 반복 작업을 AI 생성, 사람 검수, 브라우저 자동화, 발행 이력 관리로 나누어 실제 업무 자동화에도 적용 가능한 패턴을 검증했습니다.</p>
         <ul class="proj-list">
           <li>RSS/키워드 기반 주제 수집, AI 초안 생성, 리라이트, 이미지 생성, SEO 검수, 발행 승인 흐름을 파이프라인으로 구성</li>
           <li>사람이 검수한 콘텐츠만 발행되도록 draft → reviewed → approved → publishing → published/failed 상태 흐름 설계</li>
@@ -755,7 +760,7 @@
         <ul class="proj-list">
           <li><a href="https://github.com/hoonapps/ESP32_Firebase_RestApi_Stream" target="_blank">ESP32_Firebase_RestApi_Stream</a>: 기존 ESP32 Firebase 라이브러리의 타임아웃 이슈를 해결하기 위해 Firebase REST API 기반 Auth, Get, Put, Stream 기능 직접 구현</li>
           <li><a href="https://www.npmjs.com/package/kr-validators" target="_blank">kr-validators</a>: 한국 서비스에서 자주 필요한 이메일, 전화번호, 주민등록번호, 사업자등록번호 유효성 검사 npm 패키지 배포</li>
-          <li>AI 자동매매 트레이딩 봇: OpenAI API, 거래소 WebSocket, 기술적 분석, Telegram 알림, 일간 리포트를 연결한 개인 자동화 프로젝트 구현</li>
+          <li>개인 트레이딩 자동화 실험: OpenAI API, 거래소 WebSocket, 기술적 분석, Telegram 알림, 일간 리포트를 연결한 개인 자동화 프로젝트 구현</li>
         </ul>
       </div>
     </section>
@@ -765,34 +770,39 @@
       <h2 class="section-title">Skills</h2>
       <div class="skills-grid">
         <div class="skill-group">
-          <h3>Primary Backend</h3>
+          <h3>Backend</h3>
           <ul>
             <li>TypeScript, Node.js, NestJS, Express</li>
-            <li>REST API, Socket.IO, Fastify</li>
+            <li>Spring Boot</li>
           </ul>
         </div>
         <div class="skill-group">
-          <h3>Data & Messaging</h3>
+          <h3>Database</h3>
           <ul>
             <li>MySQL, PostgreSQL, MongoDB, Redis</li>
-            <li>AWS SQS, MQTT, OpenSearch</li>
-            <li>TypeORM, Sequelize</li>
+            <li>OpenSearch</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Messaging / Jobs</h3>
+          <ul>
+            <li>AWS SQS, AWS SNS, MQTT</li>
+            <li>node-cron, Kubernetes CronJob</li>
           </ul>
         </div>
         <div class="skill-group">
           <h3>Infrastructure</h3>
           <ul>
             <li>Kubernetes, EKS, Helm, ArgoCD, Docker</li>
-            <li>AWS ECS/Fargate, Lambda, RDS, ECR</li>
-            <li>GitHub Actions, CodeDeploy, Grafana</li>
+            <li>AWS ECS/Fargate, Lambda, RDS, S3</li>
+            <li>GitHub Actions, CloudWatch, Grafana, Prometheus, Datadog</li>
           </ul>
         </div>
         <div class="skill-group">
-          <h3>AI & Productivity</h3>
+          <h3>AI Tools</h3>
           <ul>
-            <li>Codex CLI, Claude Code, Cursor, OpenClaw</li>
-            <li>OpenAI API, LLM Agent Integration</li>
-            <li>AI Code Review, Test Scenario Design, Docs Automation</li>
+            <li>Claude Code, Cursor</li>
+            <li>OpenAI API</li>
           </ul>
         </div>
       </div>

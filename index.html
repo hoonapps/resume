@@ -509,9 +509,8 @@
         </div>
       </div>
       <div class="intro">
-        결제·주문·인증·외부 연동처럼 한 번의 실패가 사용자 신뢰와 운영 비용으로 이어지는 도메인을 주로 다뤄온 6년차 백엔드 엔지니어입니다. 비즈니스 플로우를 빠르게 이해하고, 그 안에서 정합성이 깨질 수 있는 지점과 운영자가 감당해야 할 예외 상황을 찾아 백엔드 구조로 해결하는 데 강점이 있습니다.<br><br>
-        기능을 빠르게 구현하는 데 그치지 않고, 그 기능이 실제 사용자 흐름과 운영 과정에서 어떻게 실패할 수 있는지를 함께 봅니다. 요구사항이 명확하지 않아도 도메인 흐름을 정리하고, 필요한 상태·예외·재처리 기준을 코드와 데이터 구조에 반영해 일을 맡긴 사람이 진행 상황과 결과를 예측할 수 있게 만드는 편입니다.<br><br>
-        결제 성공 후 발송 이벤트가 유실되는 문제, 외부 콜백 중복 처리, 인증 결과와 실제 디바이스 제어 사이의 불일치처럼 기능 구현만으로는 놓치기 쉬운 흐름을 메시징·모니터링·운영 구조로 정리해왔습니다. 레거시 시스템은 운영 중인 서비스의 리스크를 고려해 점진적으로 전환하고, AI 도구는 레거시 분석, 리뷰 체크리스트, 테스트 시나리오, 문서화 vault 같은 개발 산출물로 연결해 활용하고 있습니다.
+        결제·주문·인증·외부 연동처럼 한 번의 실패가 사용자 신뢰와 운영 비용으로 이어지는 도메인을 다뤄온 6년차 백엔드 엔지니어입니다. 현재는 누적 유저 210만, MAU 30만 규모의 모바일 기프티콘 플랫폼에서 결제 정합성, 레거시 모노레포 이관, Kubernetes 운영, 외부 제휴 연동을 담당하고 있습니다.<br><br>
+        기능 구현에 그치지 않고 사용자 흐름과 운영 예외를 함께 보고, 상태·멱등성·재처리·모니터링 기준을 코드와 데이터 구조에 남기는 방식으로 일합니다. 결제 성공 후 발송 이벤트 유실, 외부 콜백 중복 처리, 인증 결과와 디바이스 제어 불일치처럼 기능 구현만으로 놓치기 쉬운 흐름을 메시징·모니터링 구조로 해결해왔습니다.
       </div>
       <div class="profile-pills">
         <span class="profile-pill">결제 정합성</span>
@@ -554,14 +553,12 @@
 
         <div class="exp-subtitle">핵심 기여</div>
         <ul class="exp-list">
-          <li>외부 결제 콜백 후 SQS FIFO 메시지를 발행하던 구조에서, 결제 성공과 메시지 발행 사이의 원자성 갭을 발견하고 <strong>Transactional Outbox 기반 복구 흐름</strong>으로 개선했습니다. 결제 성공 후 기프티콘 발송이 누락되는 케이스를 추적·재처리 가능한 상태로 전환하고, 반복 발생하던 관련 CS 문의를 해소했습니다.</li>
+          <li>외부 결제 콜백 후 SQS FIFO 메시지를 발행하던 구조에서, 결제 성공과 메시지 발행 사이의 원자성 갭을 발견하고 <strong>Transactional Outbox</strong>를 설계·구현했습니다. 결제 상태 변경과 발행 대상 기록을 한 트랜잭션으로 묶고, MySQL binlog CDC를 primary path로 Redis Leader Election·atomic claim·fallback polling·재시도 한도를 적용해 발행 실패를 추적·재처리 가능한 상태로 전환했습니다. 주 단위로 발생하던 '결제 완료 후 발송 누락' CS 문의를 0건으로 줄였습니다.</li>
           <li>중복 콜백, PG 창 이탈, 프론트 취소, 자동 취소, consumer 재처리가 겹치는 상황을 고려해 <strong>결제 콜백 멱등성</strong>과 주문/결제 상태 전이 안정성을 보강했습니다.</li>
           <li>여러 레포지토리에 분산되어 있던 Express.js 기반 레거시 기능을 <strong>NestJS + Turborepo 모노레포</strong>로 점진 이관하고 있으며, API/consumer/cron/도메인 모델의 변경 영향도를 줄이는 방향으로 구조를 정리하고 있습니다.</li>
-          <li>공통 서비스 간 수평 참조로 도메인 경계가 흐려지는 문제를 경험하고, 계층 분리와 커스텀 ESLint 룰로 공통 계층에는 범용 로직만 남기는 방향으로 구조를 조정했습니다.</li>
-          <li>EKS + ArgoCD GitOps 기반의 <strong>100개 이상 배포 단위</strong>와 수십 개 CronJob이 운영되는 환경에서 Helm 배포, IRSA 시크릿, 배치 실행 흐름을 점검했습니다.</li>
-          <li>Grafana, Prometheus, Alertmanager, Loki/Promtail, Datadog 기반 관측 환경에서 API, consumer, batch 작업의 실행 상태와 장애 징후를 추적했습니다.</li>
+          <li>공통 서비스 간 수평 참조로 도메인 경계가 흐려지는 문제를 경험하고, 역할별 다계층 공통 구조 분리와 수평 참조를 차단하는 커스텀 ESLint 룰로 공통 계층에는 범용 로직만 남기는 방향으로 구조를 조정했습니다.</li>
           <li>뱅크샐러드 제휴 API 연동을 설계부터 운영까지 담당해 신규 트래픽 유입 경로를 확보하고, 웰컴페이먼츠·네이버 가격비교 채널 연동을 함께 리드했습니다.</li>
-          <li>Codex, Claude Code, Cursor를 활용해 <strong>문서화 vault, 리뷰 체크리스트, 테스트 시나리오</strong>를 만들고 레거시 분석·리뷰·문서화 흐름을 개선했습니다.</li>
+          <li>다수 서비스가 운영되는 EKS + ArgoCD GitOps 환경에서 Helm 배포와 CronJob·Ingress·Secret 구성을 점검하고, Grafana 기반 관측 환경을 활용해 API·consumer·batch 작업의 실행 상태와 장애 징후를 추적했습니다.</li>
         </ul>
 
         <div class="tech-tags">
@@ -579,8 +576,6 @@
           <span class="tech-tag">Docker</span>
           <span class="tech-tag">AWS SQS</span>
           <span class="tech-tag">Grafana</span>
-          <span class="tech-tag">Prometheus</span>
-          <span class="tech-tag">Datadog</span>
         </div>
       </div>
 
@@ -710,29 +705,14 @@
 
       <div class="proj-item">
         <div class="proj-header">
-          <div class="proj-name">AI 콘텐츠 자동화 워크플로우</div>
-          <span class="proj-duration">2026</span>
-        </div>
-        <p class="proj-desc">OpenClaw, Claude Code, Codex를 활용해 블로그와 콘텐츠 제작 과정을 자동화하는 개인 워크플로우를 만들었습니다. 반복 작업을 AI 생성, 사람 검수, 브라우저 자동화, 발행 이력 관리로 나누어 실제 업무 자동화에도 적용 가능한 패턴을 검증했습니다.</p>
-        <ul class="proj-list">
-          <li>RSS/키워드 기반 주제 수집, AI 초안 생성, 리라이트, 이미지 생성, SEO 검수, 발행 승인 흐름을 파이프라인으로 구성</li>
-          <li>사람이 검수한 콘텐츠만 발행되도록 draft → reviewed → approved → publishing → published/failed 상태 흐름 설계</li>
-          <li>Playwright 기반 브라우저 자동화를 통해 게시 작업을 자동화하고, 실패 이력과 재시도 지점을 추적 가능하게 구성</li>
-        </ul>
-      </div>
-
-      <div class="proj-item">
-        <div class="proj-header">
           <div class="proj-name">ClawShow — AI 소셜 플랫폼</div>
           <span class="proj-duration">2026</span>
         </div>
-        <p class="proj-desc">LLM 기반 AI 에이전트들이 참여하는 소셜 플랫폼을 풀스택으로 설계·개발했습니다. 외부 에이전트 호출, 세션 상태, 실시간 진행 상황을 하나의 사용자 흐름으로 묶는 데 집중했습니다.</p>
+        <p class="proj-desc">LLM 기반 AI 에이전트들이 참여하는 소셜 플랫폼을 풀스택으로 설계·개발한 개인 프로젝트입니다. 외부 에이전트 호출, 세션 상태, 실시간 진행 상황을 하나의 사용자 흐름으로 묶는 데 집중했습니다.</p>
         <ul class="proj-list">
           <li>NestJS(Fastify), TypeORM, PostgreSQL 기반 백엔드 설계 및 구현</li>
-          <li>OpenClaw API 게이트웨이를 통한 외부 LLM 에이전트 연동, 세션 관리, 응답 상태 추적 구현</li>
-          <li>LLM Agent의 요청, 응답, 진행 상태를 Socket.IO로 전달해 사용자가 비동기 처리 흐름을 확인할 수 있게 구성</li>
-          <li>AI MBTI 성격 테스트 시스템의 질문 생성, 응답 분석, 결과 산출 로직 구현</li>
-          <li>Next.js, React 19, Tailwind CSS 기반 프론트엔드 개발</li>
+          <li>외부 LLM 에이전트 연동에서 세션 관리와 응답 상태 추적을 구현하고, 진행 상태를 Socket.IO로 전달해 비동기 처리 흐름을 사용자에게 노출</li>
+          <li>Next.js, React 19 기반 프론트엔드를 포함해 전 구간 단독 개발</li>
         </ul>
       </div>
 
@@ -795,14 +775,7 @@
           <ul>
             <li>Kubernetes, EKS, Helm, ArgoCD, Docker</li>
             <li>AWS ECS/Fargate, Lambda, RDS, S3</li>
-            <li>GitHub Actions, CloudWatch, Grafana, Prometheus, Datadog</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h3>AI Tools</h3>
-          <ul>
-            <li>Claude Code, Cursor</li>
-            <li>OpenAI API</li>
+            <li>GitHub Actions, CloudWatch, Grafana</li>
           </ul>
         </div>
       </div>
